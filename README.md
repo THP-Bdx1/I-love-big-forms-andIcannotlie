@@ -1,24 +1,14 @@
-# README
+# APPLICATION FORMS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Informations
 
-Things you may want to cover:
+Projet réalisé en collaboration avec :
+* Valérian Michelot
+* Paul Guérin
+* David Rangeard
+* François Flous
+* William Horel
 
-* Ruby version
+## Lien vers le site en production
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Vous pouvez retrouver le site en cliquant [ici](https://i-like-big-forms-andicannotlie.herokuapp.com/users/new)

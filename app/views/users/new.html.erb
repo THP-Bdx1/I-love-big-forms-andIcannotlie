@@ -1,72 +1,39 @@
 <!doctype html>
 <html>
-    <h1>
+    <h1><center>
         <img src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif" width="30" height="30">
         NOUVEL UTILISATEUR
         <img src="https://cultofthepartyparrot.com/parrots/hd/rightparrot.gif" width="30" height="30">
-    </h1>
-    <h2> 
-        Remplis donc ton formulaire, bro ! 
+    </center></h1>
+    <h2><center>
+        Remplis donc ton formulaire, bro !<br>
         Il te faudra indiquer un pseudonyme(username), un email, et une description(bio) !
-    </h2>
+    </center></h2><
 
-    <form>
-        <div class="row">
-          <div class="col">
-            <input type="string" class="form-control" name="username" placeholder="Username">
-          </div>
-          <div class="col">
-            <input type="email" class="form-control" name="email" placeholder="Email@email.com">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Bio</label>
-          <input type="text" class="form-control" name="bio" placeholder="Ta bio ici">
-        </div>
-        <input type="submit" value="Valider" class="btn btn-primary">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    </form>
-
-<br><br><br><br>
-
-    <form class ="form-inline" action="/users/create" method="POST">
-        <input type="string" class="form-control mb-2 mr-sm-2" name="username" placeholder="Username">
-        <input type="email" class="form-control mb-2 mr-sm-2" name="email" placeholder="Email@example.com">
-        <div class="form-group">
-            <label>Bio</label>
-            <input type="text" class="form-control" name="bio" placeholder="Sors-nous une petite bio sympatoche">
-            <small id="BioHelpBlock" class="form-text text-muted">
-            Ta description doit faire au moins 50 mots, fait un petit effort ! 
-            </small>            
-        </div>
-        </div>
-    </form>
-    
-    
     <form action="/users/create" method="POST">
-        <div class="form-group">
-            <label>Username :</label>
-            <input type="string" class="form-control" name="username" placeholder="Ton nom Maggle">
+      <div class="form-row">
+        <div class="col-mr1 ml-3">
+          <label>Username</label>
+          <input type="string" class="form-control" name="username" placeholder="Your Username here">
         </div>
-        <div class="form-group">
-            <label>Email :</label>
-            <input type="email" class="form-control" name="email" placeholder="toto@exemple.com">
-            <small id="emailHelp" class="form-text text-muted">Promis on partagera pas ton adresse</small>
+        <div class="col-ml-3">
+          <label>Email</label>
+          <input type="email" class="form-control" name="email" placeholder="Email@example.com">
         </div>
-        <div class="form-group">
-            <label>Bio :</label>
-            <input type="text" class="form-control" name="bio" placeholder="Sors-nous une petite bio sympatoche">
-            <small id="BioHelpBlock" class="form-text text-muted">
-            Ta description doit faire au moins 50 mots, fait un petit effort ! 
-          </small>            
-        </div>  
-        <input type="submit" value="Valider" class="btn btn-primary">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">    
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-mr1 ml-3">
+        <label>Bio</label>
+        <textarea class="form-control" name="bio" rows="3" placeholder="Ta bio ici"></textarea>
+        </div>
+      </div>
+      <br>
+      <button class="btn btn-primary -mr1 ml-3" type="submit" value="Valider">Confirmer</button>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     </form>
-    
-<br><br><br>
 
-<p> Ici on a le <strong>form_tag</strong></p><br><br>
+<!-- <p> Ici on a le <strong>form_tag</strong></p><br><br>
 
     <%= form_tag url_for(action: 'create'), class: "form-group", method: 'post' do %>
 
@@ -83,17 +50,15 @@
         <br /> <br />
 
         <%= submit_tag "Validez votre inscription", class: "btn btn-primary"%>
-<% end %>
+<% end %> -->
 
-<br><br><br>
-
-<p>Et là un petit <strong>form_for</strong> des familles !</p>
+<!-- <p>Et là un petit <strong>form_for</strong> des familles !</p>
 <br>
     <%= form_for @user, :class => "form-group", url: {action: 'create'} do |f| %>
         Username : <%= f.text_field :username, :class => "form-control", placeholder: "ton nom Maggle" %><br />
         Email : <%= f.text_field :email, :class => "form-control", placeholder:"toto@exemple.com" %><br />
         Bio : <%= f.text_area :bio, :class => "form-control", placeholder:"Raconte ta life"%><br />
     <%= f.submit "Valide moi ça", :class => "btn btn-primary" %>
-<% end %> 
+<% end %> -->
 
 </html>
