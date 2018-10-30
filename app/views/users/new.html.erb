@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <h1>
+        <img src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif" width="30" height="30">
+        NOUVEL UTILISATEUR
+        <img src="https://cultofthepartyparrot.com/parrots/hd/rightparrot.gif" width="30" height="30">
+    </h1>
+    <h2> 
+        Remplis donc ton formulaire, bro ! 
+        Il te faudra indiquer un pseudonyme(username), un email, et une description(bio) !
+    </h2>
+    
+    <p> </p>
+    <form action="/users/create" method="POST">
+        Username  : <input type="string" name="username"> <br> <br>
+        Email  : <input type="string" name="email"> <br> <br>
+        Bio    : <input type="text" name="bio"> <br> <br>  
+        <input type="submit" value="Valider">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">    
+    </form>
+    <p> </p>
+<br><br><br>
+<p> Ici on a le <strong>form_tag</strong></p><br><br>
+
+<%= form_tag url_for(action: 'create'), method: 'post' do %>
+
+    <%= label_tag 'username' %>
+    <%= text_field_tag 'username'%>
+    <br /> <br />
+
+    <%= label_tag 'email' %>
+    <%= text_field_tag 'email'%>
+    <br /> <br />
+
+    <%= label_tag 'bio' %>
+    <%= text_area_tag 'bio'%>
+    <br /> <br />
+
+    <%= submit_tag "Validez votre inscription" %>
+
+<% end %>
+
+
+<br><br><br>
+
+
+<p>Et là un petit <strong>form_for</strong> des familles !</p>
+<br>
+<%= form_for @user, url: {action: 'create'} do |f| %>
+   Username : <%= f.text_field :username %><br />
+   Email : <%= f.text_field :email %><br />
+   Bio : <%= f.text_area :bio %><br />
+    <%= f.submit%>
+<% end %>
+</html>         
+
+
